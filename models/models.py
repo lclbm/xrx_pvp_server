@@ -7,8 +7,12 @@ class ActivityInfo(Model):
     referenceId = fields.IntField()
     directorActivityHash = fields.IntField()
     mode = fields.IntField()
+    data = fields.JSONField()
     period = fields.DatetimeField()
-
+    
+    class meta:
+        table = 'activity_info'    
+    
     def __str__(self):
         return self.name
 
